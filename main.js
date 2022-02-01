@@ -1,3 +1,21 @@
+const displaySavedBanners = (banners) => {
+    for (let banner of banners) {
+        const bannerImg = document.createElement('img')
+        bannerImg.setAttribute("class", "banner_Img")
+        bannerImg.src = banner.src
+        bannerImg.style.width = "320px"
+        bannerImg.style.height = "320px"
+        document.getElementById("saved-banners").appendChild(bannerImg)
+    }
+}
+
+const checkBanners = () => {
+    const banners = localStorage.getItem('banners-data')
+    banners === null ? null : displaySavedBanners(JSON.parse(banners))
+}
+
+window.onload = checkBanners();
+
 function createNewBanner(element_id, redirect_link, banner_img) {
     const newBannerImg = document.createElement('img')
     newBannerImg.setAttribute("class", "bannerImg")
@@ -9,7 +27,6 @@ function createNewBanner(element_id, redirect_link, banner_img) {
     }
     document.getElementById(element_id).appendChild(newBannerImg)
 }
-console.log(localStorage);
 
 const saveBanners = () => {
     const bannersData = (() => {
@@ -17,8 +34,8 @@ const saveBanners = () => {
         return fieldValue === null ? [] : JSON.parse(fieldValue)
     })();
     const banners = document.getElementsByClassName("bannerImg")
-    for(let banner of banners) {
-        bannersData.push({"class": banner.className, "src": banner.src})
+    for (let banner of banners) {
+        bannersData.push({ "src": banner.src })
     }
     localStorage.setItem('banners-data', JSON.stringify(bannersData))
 };
