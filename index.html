@@ -1,16 +1,36 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-       
-        
-        <script src="main.js" async defer></script>
-    </body>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div>
+        <label for="bannerImgUrl">Banner IMG URL</label>
+        <br>
+        <input type="text" id="bannerImgUrl" value="">
+        <br>
+        <br>
+        <label for="redirectLink">Redirect Link</label>
+        <br>
+        <input type="text" id="redirectLink" value="">
+        <br>
+        <br>
+        <button onclick="createNewBanner('banners-list', bannerImgUrl.value, redirectLink.value)">Submit</button>
+    </div>
+    <br>
+    
+    <br>
+    <div id="banners-list">
+    </div>
+
+    <script src="main.js" async defer></script>
+</body>
+
 </html>

@@ -7,4 +7,8 @@ function createNewBanner (element_id, redirect_link, banner_img) {
         window.location = redirect_link
     }
     document.getElementById(element_id).appendChild(newBannerImg)
+    // console.log("lol");
+    // console.log(element_id);
+    // console.log(redirect_link);
+    // console.log(banner_img);
 }
